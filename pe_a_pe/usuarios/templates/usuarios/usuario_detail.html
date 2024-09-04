@@ -1,0 +1,24 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'usuarios_Usuario_list' %}">
+    Usuario Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>last_updated</td><td>{{ object.last_updated }}</td></tr>
+    <tr><td>photo</td><td>{{ object.photo }}</td></tr>
+    <tr><td>phone</td><td>{{ object.phone }}</td></tr>
+    <tr><td>cpf</td><td>{{ object.cpf }}</td></tr>
+    <tr><td>birth_date</td><td>{{ object.birth_date }}</td></tr>
+    <tr><td>created</td><td>{{ object.created }}</td></tr>
+    <tr><td>gender</td><td>{{ object.gender }}</td></tr>
+    <tr><td>social_medias</td><td>{{ object.social_medias }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}

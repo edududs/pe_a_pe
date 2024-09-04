@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="m-2"><h4>usuarios</h4></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'usuarios_Adress_list' %}">Adress Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'usuarios_Measurements_list' %}">Measurements Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'usuarios_Usuario_list' %}">Usuario Listing</a></div>
+<div class="m-2"><h4>produtos</h4></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'produtos_Produto_list' %}">Produto Listing</a></div>
+{% endblock %}

@@ -1,0 +1,70 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'usuarios_Adress_list' %}">
+    Adress Listing
+    </a>
+</p>
+    
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form.errors}}
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="complement">complement: </label>
+      <input class="form-control col-sm-10"
+         id="complement" type="text"
+         name="complement" value="{{ object.complement }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="state">state: </label>
+      <input class="form-control col-sm-10"
+         id="state" type="text"
+         name="state" value="{{ object.state }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="city">city: </label>
+      <input class="form-control col-sm-10"
+         id="city" type="text"
+         name="city" value="{{ object.city }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="cep">cep: </label>
+      <input class="form-control col-sm-10"
+         id="cep" type="text"
+         name="cep" value="{{ object.cep }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="last_updated">last_updated: </label>
+      <input class="form-control col-sm-10"
+         id="last_updated" type="datetime-local"
+         name="last_updated" value="{{ object.last_updated }}" disabled>
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="neighborhood">neighborhood: </label>
+      <input class="form-control col-sm-10"
+         id="neighborhood" type="text"
+         name="neighborhood" value="{{ object.neighborhood }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="created">created: </label>
+      <input class="form-control col-sm-10"
+         id="created" type="datetime-local"
+         name="created" value="{{ object.created }}" disabled>
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="number">number: </label>
+      <input class="form-control col-sm-10"
+         id="number" type="text"
+         name="number" value="{{ object.number }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="user">user: </label>
+      {{ form.user }}
+  </div>
+  <input type="submit" value="Save" class="btn btn-primary">
+</form>
+
+{% endblock %}
